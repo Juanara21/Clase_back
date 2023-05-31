@@ -10,6 +10,7 @@ import routesProducto from '../routes/producto';
 import routesVenta from '../routes/venta';
 import routesTipoProducto from '../routes/tipoProducto';
 import routesProductosVentas from '../routes/productosVentas';
+import  cors  from "cors";
 
 
 
@@ -45,7 +46,7 @@ class Server{
    midlewaires(){
        this.app.use(express.json());
        this.app.use(morgan('dev'));
-    //    this.app.use(cors());
+       this.app.use(cors());
    }
 
    async dbConnect(){

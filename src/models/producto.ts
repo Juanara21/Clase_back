@@ -1,5 +1,9 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../db/connection';
+import { TipoProducto } from "./tipoProducto";
+import { Venta } from "./venta";
+import { ProductoVentas} from "./productosVentas";
+
 
 export const Producto = sequelize.define('Producto', {
   
@@ -25,3 +29,8 @@ export const Producto = sequelize.define('Producto', {
         allowNull: false
        }
     });
+    Producto.belongsTo(TipoProducto, { foreignKey: "tipoProductoId" });
+    TipoProducto.hasMany(Producto, { foreignKey: "tipoProductoId" });
+
+    Producto.belongsToMany(Venta,{through: ProductoVentas});
+    Venta.belongsToMany(Producto,{through: ProductoVentas});

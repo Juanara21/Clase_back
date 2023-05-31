@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Venta = void 0;
 const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../db/connection"));
+const cliente_1 = require("./cliente");
 exports.Venta = connection_1.default.define('Venta', {
     id: {
         type: sequelize_1.DataTypes.INTEGER,
@@ -33,3 +34,5 @@ exports.Venta = connection_1.default.define('Venta', {
         allowNull: false
     }
 });
+exports.Venta.belongsTo(cliente_1.Cliente, { foreignKey: "clienteId" });
+cliente_1.Cliente.hasMany(exports.Venta, { foreignKey: "clienteId" });

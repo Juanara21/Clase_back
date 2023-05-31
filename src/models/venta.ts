@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../db/connection';
+import { Cliente } from "./cliente";
 
 export const Venta = sequelize.define('Venta', {
     id: {
@@ -29,5 +30,8 @@ export const Venta = sequelize.define('Venta', {
       }
    
     });
+
+    Venta.belongsTo(Cliente, { foreignKey: "clienteId" });
+    Cliente.hasMany(Venta, { foreignKey: "clienteId" });
 
 
