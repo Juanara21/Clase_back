@@ -14,7 +14,7 @@ const cliente_1 = require("../models/cliente");
 const getAllClientes = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const clientes = yield cliente_1.Cliente.findAll();
-        res.status(200).json({ clientes });
+        res.status(200).json(clientes);
     }
     catch (error) {
         console.log(error);

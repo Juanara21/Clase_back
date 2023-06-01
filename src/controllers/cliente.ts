@@ -4,7 +4,7 @@ import { Cliente  } from "../models/cliente";
 export const getAllClientes = async (req: Request, res: Response) => {
     try {
       const clientes = await Cliente.findAll();
-      res.status(200).json({ clientes });
+      res.status(200).json( clientes );
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: "Error en el servidor" });

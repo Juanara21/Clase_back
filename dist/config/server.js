@@ -24,6 +24,7 @@ const producto_2 = __importDefault(require("../routes/producto"));
 const venta_2 = __importDefault(require("../routes/venta"));
 const tipoProducto_2 = __importDefault(require("../routes/tipoProducto"));
 const productosVentas_2 = __importDefault(require("../routes/productosVentas"));
+const cors_1 = __importDefault(require("cors"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -48,7 +49,7 @@ class Server {
     midlewaires() {
         this.app.use(express_1.default.json());
         this.app.use((0, morgan_1.default)('dev'));
-        //    this.app.use(cors());
+        this.app.use((0, cors_1.default)());
     }
     dbConnect() {
         return __awaiter(this, void 0, void 0, function* () {
