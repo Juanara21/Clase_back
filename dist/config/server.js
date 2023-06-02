@@ -14,17 +14,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
-const cliente_1 = require("../models/cliente");
 const venta_1 = require("../models/venta");
 const tipoProducto_1 = require("../models/tipoProducto");
 const producto_1 = require("../models/producto");
 const productosVentas_1 = require("../models/productosVentas");
-const cliente_2 = __importDefault(require("../routes/cliente"));
+const cliente_1 = __importDefault(require("../routes/cliente"));
 const producto_2 = __importDefault(require("../routes/producto"));
 const venta_2 = __importDefault(require("../routes/venta"));
 const tipoProducto_2 = __importDefault(require("../routes/tipoProducto"));
 const productosVentas_2 = __importDefault(require("../routes/productosVentas"));
 const cors_1 = __importDefault(require("cors"));
+const cliente_2 = require("../models/cliente");
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -40,7 +40,7 @@ class Server {
         });
     }
     routes() {
-        this.app.use('/api/cliente', cliente_2.default);
+        this.app.use('/api/cliente', cliente_1.default);
         this.app.use('/api/venta', venta_2.default);
         this.app.use('/api/tipoProducto', tipoProducto_2.default);
         this.app.use('/api/producto', producto_2.default);
@@ -55,7 +55,7 @@ class Server {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 //    await Career.sync();
-                yield cliente_1.Cliente.sync();
+                yield cliente_2.Cliente.sync();
                 yield venta_1.Venta.sync();
                 yield tipoProducto_1.TipoProducto.sync();
                 yield producto_1.Producto.sync();

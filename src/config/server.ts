@@ -1,6 +1,6 @@
 import express,  { Application } from 'express';
 import morgan from 'morgan';
-import { Cliente } from '../models/cliente';
+
 import { Venta } from '../models/venta';
 import { TipoProducto } from '../models/tipoProducto';
 import { Producto } from '../models/producto';
@@ -11,6 +11,7 @@ import routesVenta from '../routes/venta';
 import routesTipoProducto from '../routes/tipoProducto';
 import routesProductosVentas from '../routes/productosVentas';
 import  cors  from "cors";
+import { Cliente } from '../models/cliente';
 
 
 
