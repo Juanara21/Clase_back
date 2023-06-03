@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Venta = void 0;
 const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../db/connection"));
-const cliente_1 = require("./Cliente");
+const cliente_1 = require("./cliente");
 exports.Venta = connection_1.default.define('Venta', {
     id: {
         type: sequelize_1.DataTypes.INTEGER,

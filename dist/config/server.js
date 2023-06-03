@@ -17,14 +17,14 @@ const morgan_1 = __importDefault(require("morgan"));
 const venta_1 = require("../models/venta");
 const tipoProducto_1 = require("../models/tipoProducto");
 const producto_1 = require("../models/producto");
-const productosVentas_1 = require("../models/ProductosVentas");
+const productosVentas_1 = require("../models/productosVentas");
 const cliente_1 = __importDefault(require("../routes/cliente"));
 const producto_2 = __importDefault(require("../routes/producto"));
 const venta_2 = __importDefault(require("../routes/venta"));
 const tipoProducto_2 = __importDefault(require("../routes/tipoProducto"));
 const productosVentas_2 = __importDefault(require("../routes/productosVentas"));
 const cors_1 = __importDefault(require("cors"));
-const cliente_2 = require("../models/Cliente");
+const cliente_2 = require("../models/cliente");
 class Server {
     constructor() {
         this.app = (0, express_1.default)();

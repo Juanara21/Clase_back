@@ -29,8 +29,8 @@ export const Producto = sequelize.define('Producto', {
         allowNull: false
        }
     });
-    // Producto.belongsTo(TipoProducto, { foreignKey: "tipoProductoId" });
-    // TipoProducto.hasMany(Producto, { foreignKey: "tipoProductoId" });
+    Producto.belongsTo(TipoProducto, { foreignKey: "tipoProductoId" });
+    TipoProducto.hasMany(Producto, { foreignKey: "tipoProductoId" });
 
-    // Producto.belongsToMany(Venta,{through: ProductoVentas});
-    // Venta.belongsToMany(Producto,{through: ProductoVentas});
+    Producto.belongsToMany(Venta,{through: ProductoVentas});
+    Venta.belongsToMany(Producto,{through: ProductoVentas});

@@ -6,6 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Producto = void 0;
 const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../db/connection"));
+const tipoProducto_1 = require("./tipoProducto");
+const venta_1 = require("./venta");
+const productosVentas_1 = require("./productosVentas");
 exports.Producto = connection_1.default.define('Producto', {
     id: {
         type: sequelize_1.DataTypes.INTEGER,
@@ -29,7 +32,7 @@ exports.Producto = connection_1.default.define('Producto', {
         allowNull: false
     }
 });
-// Producto.belongsTo(TipoProducto, { foreignKey: "tipoProductoId" });
-// TipoProducto.hasMany(Producto, { foreignKey: "tipoProductoId" });
-// Producto.belongsToMany(Venta,{through: ProductoVentas});
-// Venta.belongsToMany(Producto,{through: ProductoVentas});
+exports.Producto.belongsTo(tipoProducto_1.TipoProducto, { foreignKey: "tipoProductoId" });
+tipoProducto_1.TipoProducto.hasMany(exports.Producto, { foreignKey: "tipoProductoId" });
+exports.Producto.belongsToMany(venta_1.Venta, { through: productosVentas_1.ProductoVentas });
+venta_1.Venta.belongsToMany(exports.Producto, { through: productosVentas_1.ProductoVentas });
