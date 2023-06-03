@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.actualizarProductoVenta = exports.eliminarProductoVenta = exports.obtenerProductoVentas = exports.crearProductoVenta = void 0;
-const productosVentas_1 = require("../models/productosVentas");
+const productosVentas_1 = require("../models/ProductosVentas");
 const crearProductoVenta = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const productVenta = yield productosVentas_1.ProductoVentas.create(req.body);
