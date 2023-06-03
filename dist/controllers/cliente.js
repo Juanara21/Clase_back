@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteCliente = exports.updateCliente = exports.createCliente = exports.getClienteById = exports.getAllClientes = void 0;
-const cliente_1 = require("../models/cliente");
+const cliente_1 = require("../models/Cliente");
 const getAllClientes = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const clientes = yield cliente_1.Cliente.findAll();

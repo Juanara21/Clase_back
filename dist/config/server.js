@@ -24,7 +24,7 @@ const venta_2 = __importDefault(require("../routes/venta"));
 const tipoProducto_2 = __importDefault(require("../routes/tipoProducto"));
 const productosVentas_2 = __importDefault(require("../routes/productosVentas"));
 const cors_1 = __importDefault(require("cors"));
-const cliente_2 = require("../models/cliente");
+const cliente_2 = require("../models/Cliente");
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
